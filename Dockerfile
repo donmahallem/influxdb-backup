@@ -1,10 +1,10 @@
 ARG TARGETOS
 ARG TARGETARCH
 
-FROM influxdb:2.7 AS influxdb-arm64
+FROM influxdb:2.7-alpine AS influxdb-arm64
 ARG AWS_SOURCE="https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip"
 
-FROM influxdb:2.7 AS influxdb-amd64
+FROM influxdb:2.7-alpine AS influxdb-amd64
 ARG AWS_SOURCE="https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip"
 
 FROM influxdb-${TARGETARCH}
