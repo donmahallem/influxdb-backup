@@ -11,7 +11,7 @@ FROM influxdb-${TARGETARCH}
 
 WORKDIR /backup/aws
 
-RUN apk update && apk add aws-cli
+RUN apk update && apk add aws-cli gpg gpg-agent
 #RUN --mount=type=tmpfs,target=/backup/aws \
 #    wget -q -O "./awscliv2.zip" "$AWS_SOURCE" && \
 #    unzip awscliv2.zip && \
